@@ -1,0 +1,241 @@
+/**
+* Custom CSS Styles
+*/
+body {
+    font-size: 14px;
+}
+.navbar-brand {
+    padding: 8px 20px;
+}
+.jumbotron {
+    background-color: #fff;
+}
+.jumbotron h1 {
+    font-weight: 300;
+    font-size: 3.5rem;
+}
+.jumbotron img {
+    height: 150px;
+}
+
+/**
+* example docs
+*/
+.docs-example {
+  position: relative;
+  padding: 4em 1em 1em;
+  border: 1px solid #d8d8d8;
+  margin: 1.5rem 0 0;
+}
+
+.docs-example::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 1em;
+  color: #aaa;
+  font-size: smaller;
+  font-weight: 500;
+  content: 'EXAMPLE';
+}
+
+.docs-example::after {
+  clear: both;
+  content: " ";
+  display: table;
+}
+
+.docs-example .card {
+  max-width: 320px;
+}
+
+.docs-example + pre {
+  border: 1px solid #d8d8d8;
+  border-top: none;
+  padding: 1em;
+  margin-top: 0 !important;
+  clear: both;
+}
+
+.docs-example > .container .row {
+  margin-bottom: 1rem;
+}
+
+.docs-example > .container .row > [class^="col"] {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  background-color: #E5EDF5;
+  border: 1px solid #C9C1D5;
+  color: #5F5F5F;
+}
+
+.docs-example .form-control + .form-control {
+    margin-top: .5rem;
+}
+
+.docs-example .nav-tabs {
+  margin-bottom: 1rem;
+}
+
+.docs-example .progress {
+  margin-bottom: 1rem;
+}
+
+.example-label-title {
+    font-weight: 600;
+    padding-bottom: 10px;
+    display: block;
+}
+
+footer {
+  margin-top: 2rem;
+  padding: 2rem 0;
+  border-top: 1px solid #e7e7e7;
+}
+
+footer .social {
+  margin-bottom: 0;
+}
+
+footer .social a {
+  display: inline-block;
+}
+
+footer .social img {
+  display: block;
+}
+
+
+/* http://prismjs.com/download.html?themes=prism-okaidia&languages=markup+css+clike+javascript+bash+jsx+typescript */
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+pre {
+    font-size: 14.4px;
+}
+pre, code {
+  background: #f5f5f5;
+  border-radius: 0;
+  border-color: #d8d8d8;
+  margin: 0;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: 1.1em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+code .tag {
+  font-size: inherit;
+  padding: 0;
+  display: inherit;
+}

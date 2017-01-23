@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Patternfly Web Components</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/patternfly/3.18.1/css/patternfly.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/patternfly/3.18.1/css/patternfly-additions.min.css"> 
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css">
+
+    <!-- todo: remove these web component styles and shim and source from patternfly.css in patternfly-webcomponents -->
+    <script>
+        if (typeof HTMLElement !== 'function'){
+        var _HTMLElement = function(){};
+        _HTMLElement.prototype = HTMLElement.prototype;
+        HTMLElement = _HTMLElement;
+        }
+    </script>
+    <style>
+    pf-alert {
+        display: block;
+    }
+    pf-alert .hidden {
+        display: none;
+    }
+    pf-tooltip {
+        display: none;
+    }
+    </style>
+
+    <!-- web components -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.23/webcomponents-lite.min.js"></script>
+    <script src="//rawgit.com/patternfly-webcomponents/patternfly-webcomponents/master-dist/dist/js/patternfly.js"></script>
+</head> 
+
+<body class="body-blue">
+    <header id="header">
+    <nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img class="navbar-brand-icon" alt="brand" src="assets/images/logo-alt.svg"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown active">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Frameworks <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li class="active"><a href="angular.html">Angular<span class="sr-only">(current)</span></a></li>
+                    <li><a href="angular2.html">Angular2</a></li>
+                    <li><a href="react.html">React</a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="components.html">Components</a></li>
+            <li><a href="https://github.com/patternfly-webcomponents/patternfly-webcomponents">Github</a></li>
+        </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+    </nav>
+    </header>
+    
+
+    <div class="doc-wrapper">
+        <div class="container">
+            <div id="doc-header" class="doc-header text-center">
+                <h1 class="doc-title">Angular Components</h1>
+            </div><!--//doc-header-->
+            <div class="doc-body">
+                <div class="doc-content">
+                    <div class="content-inner">
+
+                        <!-- Overview -->
+                        <section id="overview" class="doc-section">
+                            <h2 class="section-title">Overview</h2>
+                            <div class="section-block">
+                                <p>Angular 1.5 Component extensions (shims) for Patternfly web components are implemented to enhance the Angular.js experience and ease consumption in the Angular.js framework.</p>
+                                <p> Angular Components require the core component dependencies mentioned in
+                                    <a href="components.html">Components</a> along with the following extension <a href="https://github.com/patternfly-webcomponents/angular-patternfly-shims">library</a>:</p>
+                                <pre class="language-bash"><code class="language-bash">npm install --save angular-patternfly-shims</code></pre>
+                                <p>Include the <code>angular-patternfly.webcomponents.js</code> script and then declare a dependency on the <code>patternfly.webcomponents</code> module:
+                                <pre class="language-javascript"><code class="language-javascript">angular.module('myModule', ['patternfly.webcomponents']);</code></pre>
+                            </div><!--//section-block-->
+                        </section><!--//doc-section-->
+
+                        <!-- Alerts -->
+                        <section id="alerts" class="doc-section">
+                            <h2 class="section-title">Alerts</h2>
+                            <div class="section-block">
+                                <div class="docs-example">
+                                    <pf-alert type="info" persistent="true">Well done <strong>John</strong>! You successfully read this important alert message. 
+                                    </pf-alert>
+                                </div>
+                                <pre class=" language-html"><code class=" language-html">&lt;pf-alert type=&quot;info&quot; ng-attr-persistent=&quot;{{isPersistent}}&quot;&gt;
+    Well done &lt;strong&gt;{{user.name}}&lt;/strong&gt;! You successfully read this important alert message.
+&lt;/pf-alert&gt;
+</code></pre>
+<pre class=" language-javascript"><code class=" language-javascript">angular.module('myModule').controller('exampleController', ['$scope', function ($scope) {
+    $scope.user = {name: 'John'};
+    $scope.isPersistent = true;	
+  }
+]);
+</code></pre>
+
+                            </div><!--//section-block-->
+                        </section><!--//doc-section-->
+
+                        <!-- Charts -->
+                        <section id="charts" class="doc-section">
+                            <h2 class="section-title">Charts</h2>
+                            <div id="utilization-bar" class="section-block">
+                                <h3 class="block-title">Utilization Bar Chart</h3>
+                                <p>The Utilization Bar Chart depicts the percentage utilization ratio between used and available.</p>
+                                <div class="docs-example">
+                                    <label class="example-label-title">Thresholds</label>
+                                    <pf-utilization-bar-chart id="thresholdExample1" chart-title="RAM Usage" used="10" total="100" units="MB" threshold-warning="60" threshold-error="85"></pf-utilization-bar-chart>
+                                </div>
+                                <pre class=" language-html"><code class=" language-html">&lt;pf-utilization-bar-chart threshold-set=&quot;thresholdSet(event)&quot; id=&quot;thresholdExample&quot; chart-title=&quot;RAM Usage&quot; used=&quot;{{used}}&quot; total=&quot;100&quot; units=&quot;MB&quot; threshold-warning=&quot;60&quot; threshold-error=&quot;85&quot;&gt;&lt;/pf-utilization-bar-chart&gt;
+</code></pre>
+                                <pre class=" language-javascript"><code class=" language-javascript">angular.module('myModule').controller('exampleController',
+  ['$scope','$interval', function ($scope, $interval) {
+
+    $scope.used = 10;
+
+    $interval(function () {
+        if ($scope.used &gt; 100) {
+            $scope.used = 10;
+        } else {
+            $scope.used += 10;
+        }
+    }, 1900);
+
+    $scope.thresholdSet = function (e) {
+        //monitor threshold here!
+        var threshold = e.detail.threshold;
+    };
+  }
+]);
+</code></pre>
+                            </div><!--//section-block-->
+                        </section><!--//doc-section-->
+
+                        <!-- Tabs -->
+                        <section id="tabs" class="doc-section">
+                            <h2 class="section-title">Tabs</h2>
+                            <div class="section-block">
+                                <div class="docs-example">
+                                    <pf-tabs id="pf-tabs">
+                                        <pf-tab tabTitle="Cupcakes">
+                                            <p>Cupcake ipsum dolor. Sit amet topping. Jelly-o cake ice cream jujubes marshmallow cotton candy.</p>
+                                        </pf-tab>
+                                        <pf-tab tabTitle="Caramels">
+                                            <p>Candy caramels sweet roll macaroon pastry cupcake liquorice. Cookie I love topping I love cookie toffee chocolate bar. Jelly-o sweet roll I love dessert powder.</p>
+                                        </pf-tab>
+                                    </pf-tabs>
+                                    <script>
+                                        var pfTabs = document.querySelector('#pf-tabs');
+                                        pfTabs.addEventListener('tabChanged', function(ev){
+                                            alert('holy guacamole! Active tab is now: ' + ev.detail);
+                                        });
+                                    </script>
+                                </div>
+<pre class=" language-html"><code class=" language-html">&lt;pf-tabs class=&quot;nav nav-tabs&quot; tab-changed=&quot;tabChanged(event)&quot;&gt;
+    &lt;pf-tab tabTitle=&quot;Cupcakes&quot; is-active=&quot;tabOne.active&quot;&gt;
+        &lt;p&gt;Cupcake ipsum dolor. Sit amet topping. Jelly-o cake ice cream jujubes marshmallow cotton candy.&lt;/p&gt;
+    &lt;/pf-tab&gt;
+    &lt;pf-tab tabTitle=&quot;Caramels&quot; is-active=&quot;tabTwo.active&quot;&gt;
+        &lt;p&gt;Candy caramels sweet roll macaroon pastry cupcake liquorice. Cookie I love topping I love cookie toffee chocolate bar. Jelly-o sweet roll I love dessert powder.&lt;/p&gt;
+    &lt;/pf-tab&gt;
+&lt;/pf-tabs&gt;
+</code></pre>
+<pre class="language-javascript"><code class="language-javascript">angular.module('myModule').controller('exampleController', ['$scope', function ($scope) {
+
+    //tabs
+    $scope.tabOne = {active: true, title: 'Cupcakes'};
+    $scope.tabTwo = {active: false, title: 'Caramels'};
+
+    $scope.tabChanged = function (ev) {
+        alert('holy guacamole! Active tab is now: ' + ev.detail);
+    };
+  }
+]);
+</code></pre>
+                            </div><!--//section-block-->
+                        </section><!--//doc-section-->
+
+                        <!-- Tooltips -->
+                        <section id="tooltips" class="doc-section">
+                            <h2 class="section-title">Tooltips</h2>
+                            <div class="section-block">
+                                <div class="docs-example">
+                                    <pf-tooltip id="tooltip-left" placement="left" targetSelector="#btn-left">
+                                        Look Ma!
+                                    </pf-tooltip>
+                                    <button id="btn-left" type="button" class="btn btn-primary btn-lg"         aria-describedby="tooltip-left">Left</button>
+
+                                    <pf-tooltip id="tooltip-top" placement="top" targetSelector="#btn-top">
+                                        It still binds!
+                                    </pf-tooltip>
+                                    <button id="btn-top" type="button" class="btn btn-default btn-lg" aria-describedby="tooltip-top">Top</button>
+
+                                    <pf-tooltip id="tooltip-bottom" placement="bottom" targetSelector="#btn-bottom">
+                                        Oh, that's great!
+                                    </pf-tooltip>
+                                    <button id="btn-bottom" type="button" class="btn btn-warning btn-lg" aria-describedby="tooltip-bottom">Bottom</button>
+
+                                    <pf-tooltip id="tooltip-right" placement="right" targetSelector="#btn-right">
+                                        Must be an observer.
+                                    </pf-tooltip>
+                                    <button id="btn-right" type="button" class="btn btn-danger btn-lg" aria-describedby="tooltip-right">Right</button>
+                                </div>
+<pre class=" language-html"><code class=" language-html">&lt;pf-tooltip id=&quot;tooltip-left&quot; placement=&quot;left&quot; targetSelector=&quot;#btn-left&quot;&gt;{{tooltipLeft}}&lt;/pf-tooltip&gt;
+&lt;button id=&quot;btn-left&quot; type=&quot;button&quot; class=&quot;btn btn-primary btn-lg&quot; aria-describedby=&quot;tooltip-left&quot;&gt;Left&lt;/button&gt;
+
+&lt;pf-tooltip id=&quot;tooltip-top&quot; placement=&quot;top&quot; targetSelector=&quot;#btn-top&quot;&gt;{{tooltipTop}}&lt;/pf-tooltip&gt;
+&lt;button id=&quot;btn-top&quot; type=&quot;button&quot; class=&quot;btn btn-default btn-lg&quot; aria-describedby=&quot;tooltip-top&quot;&gt;Top&lt;/button&gt;
+
+&lt;pf-tooltip id=&quot;tooltip-bottom&quot; placement=&quot;bottom&quot; targetSelector=&quot;#btn-bottom&quot;&gt;{{tooltipBottom}}&lt;/pf-tooltip&gt;
+&lt;button id=&quot;btn-bottom&quot; type=&quot;button&quot; class=&quot;btn btn-warning btn-lg&quot; aria-describedby=&quot;tooltip-bottom&quot;&gt;Bottom&lt;/button&gt;
+
+&lt;pf-tooltip id=&quot;tooltip-right&quot; placement=&quot;right&quot; targetSelector=&quot;#btn-right&quot;&gt;{{tooltipRight}}&lt;/pf-tooltip&gt;
+&lt;button id=&quot;btn-right&quot; type=&quot;button&quot; class=&quot;btn btn-danger btn-lg&quot; aria-describedby=&quot;tooltip-right&quot;&gt;Right&lt;/button&gt;
+</code></pre>
+<pre class="language-javascript"><code class="language-javascript">angular.module('myModule').controller('exampleController', ['$scope', function ($scope) {
+    $scope.tooltipLeft = "Look Ma!";
+    $scope.tooltipTop = "It still binds!";
+    $scope.tooltipBottom = "Oh, that's great.";
+    $scope.tooltipRight = "Must be an observer.";
+  }
+]);
+</code></pre>
+                            </div><!--//section-block-->
+                        </section><!--//doc-section-->
+
+                        <section id="demo-apps" class="doc-section">
+                            <h2 class="section-title">Demo Apps</h2>
+                            <div class="section-block">
+                                <p>The following <a href="https://angular1-pf-webcomponents-demo.firebaseapp.com">app</a> demonstrates use of Angular 1.5 with Patternfly web components.</p>
+
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-5 col-xs-12">
+                                        <h6>Components List</h6>
+                                        <ul class="list list-unstyled">
+                                            <li><a href="angular.html#alerts"><i class="fa fa-check"></i> Alerts </a></li>
+                                            <li><a href="angular.html#tabs"><i class="fa fa-check"></i> Tabs</a></li>
+                                            <li><a href="angular.html#tooltips"><i class="fa fa-check"></i> Tooltips</a></li>
+                                            <li><a href="angular.html#utilization-bar"><i class="fa fa-check"></i> Utilization Bar Chart</a></li>
+                                        </ul>
+                                        <br/>
+                                        <h6>Github Project</h6>
+                                        <a href="https://github.com/patternfly-webcomponents/angular1-pf-webcomponents-demo">Link to Project</a>
+                                    </div>
+                                    <div class="col-md-8 col-sm-5 col-xs-12">
+                                        <h6>Screenshot</h6>
+                                        <div class="screenshot-holder">
+                                            <a href="https://angular1-pf-webcomponents-demo.firebaseapp.com" target="_blank"><img class="img-responsive" src="assets/images/demo/angular1-demo.png" alt="screenshot" /></a>
+                                            </div> 
+                                    </div>
+                                </div><!--//row-->
+                            </div><!--//section-block-->
+                        </section><!--//doc-section-->
+                        
+                    </div><!--//content-inner-->
+                </div><!--//doc-content-->
+                <div class="doc-sidebar">
+                    <nav id="doc-nav">
+                        <ul id="doc-menu" class="nav doc-menu hidden-xs" data-spy="affix">
+                            <li><a class="scrollto" href="#overview">Overview</a></li>
+                            <li><a class="scrollto" href="#alerts">Alerts</a></li>
+                            <li>
+                                <a class="scrollto" href="#charts">Charts</a>
+                                <ul class="nav doc-sub-menu">
+                                    <li><a class="scrollto" href="#utilization-bar">Utilization Bar</a></li>
+                                </ul><!--//nav-->
+                            </li>
+                            <li><a class="scrollto" href="#tabs">Tabs</a></li>
+                            <li><a class="scrollto" href="#tooltips">Tooltips</a></li>
+                            <li><a class="scrollto" href="#demo-apps">Demo Apps</a></li>
+                        </ul><!--//doc-menu-->
+                    </nav>
+                </div><!--//doc-sidebar-->
+            </div><!--//doc-body-->              
+        </div><!--//container-->
+    </div><!--//doc-wrapper-->
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="text-center col">
+                    <p class="social">
+                        <iframe src="https://ghbtns.com/github-btn.html?user=patternfly-webcomponents&amp;repo=patternfly-webcomponents&amp;type=star&amp;count=true" frameborder="0" scrolling="0" width="80" height="30px"></iframe>
+                        <iframe src="https://ghbtns.com/github-btn.html?user=patternfly-webcomponents&amp;repo=patternfly-webcomponents&amp;type=fork&amp;count=true" frameborder="0" scrolling="0" width="80" height="30px"></iframe>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+     
+    <!-- Main Javascript -->          
+    <script src="assets/plugins/jquery-1.12.3.min.js"></script>
+    <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

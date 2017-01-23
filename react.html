@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Patternfly Web Components</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/patternfly/3.18.1/css/patternfly.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/patternfly/3.18.1/css/patternfly-additions.min.css"> 
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css">
+
+    <!-- todo: remove these web component styles and source from patternfly.css in patternfly-webcomponents -->
+    <style>
+    pf-alert {
+        display: block;
+    }
+    pf-alert .hidden {
+        display: none;
+    }
+    pf-tooltip {
+        display: none;
+    }
+    </style>
+
+    <!-- web components -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.23/webcomponents-lite.min.js"></script>
+    <script src="//rawgit.com/patternfly-webcomponents/patternfly-webcomponents/master-dist/dist/js/patternfly.js"></script>
+</head> 
+
+<body class="body-blue">
+    <header id="header">
+    <nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><img class="navbar-brand-icon" alt="brand" src="assets/images/logo-alt.svg"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown active">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Frameworks <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="angular.html">Angular</a></li>
+                    <li><a href="angular2.html">Angular2</a></li>
+                    <li class="active"><a href="react.html">React<span class="sr-only">(current)</span></a></li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="components.html">Components</a></li>
+            <li><a href="https://github.com/patternfly-webcomponents/patternfly-webcomponents">Github</a></li>
+        </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+    </nav>
+    </header>
+    
+
+    <div class="doc-wrapper">
+        <div class="container">
+            <div id="doc-header" class="doc-header text-center">
+                <h1 class="doc-title">React Components</h1>
+            </div><!--//doc-header-->
+            <div class="doc-body">
+                <div class="doc-content">
+                    <div class="content-inner">
+
+                        <!-- Overview -->
+                        <section id="overview" class="doc-section">
+                            <h2 class="section-title">Overview</h2>
+                            <div class="section-block">
+                                <p>React Component extensions (shims) for Patternfly web components are implemented to enhance the React.js experience and ease consumption in the React.js framework.</p>
+                                <p> React Components require the core component dependencies mentioned in <a href="components.html">Components</a> along with the following extension <a href="https://github.com/patternfly-webcomponents/react-patternfly-shims">library</a>:</p>
+                                <pre class="language-bash"><code class="language-bash">npm install --save react-patternfly-shims</code></pre>
+                            </div><!--//section-block-->
+                        </section><!--//doc-section-->
+
+                        <!-- Alerts -->
+                        <section id="alerts" class="doc-section">
+                            <h2 class="section-title">Alerts</h2>
+                            <div class="section-block">
+                                <div class="docs-example">
+                                    <pf-alert type="danger" persistent="true">Danger <strong>Will Robinson</strong>! Danger!
+                                    </pf-alert>
+                                </div>
+<pre class=" language-jsx"><code class=" language-jsx">import React from 'react';
+import { Alert } from 'react-patternfly-shims';
+
+class Example extends React.Component {
+	constructor(props) {
+        super(props);
+		this.state = { username: 'Will Robinson' };
+	}
+	render() {
+		return (
+            &lt;Alert type=&quot;danger&quot; persistent={true}&gt; 
+                Danger &lt;strong&gt; {this.state.username}&lt;/strong&gt;! Danger!
+            &lt;/Alert&gt;
+		)
+	}
+}
+
+export default Example;
+</code></pre>
+
+                            </div><!--//section-block-->
+                        </section><!--//doc-section-->
+
+                        <!-- Charts -->
+                        <section id="charts" class="doc-section">
+                            <h2 class="section-title">Charts</h2>
+                            <div id="utilization-bar" class="section-block">
+                                <h3 class="block-title">Utilization Bar Chart</h3>
+                                <p>The Utilization Bar Chart depicts the percentage utilization ratio between used and available.</p>
+                                <div class="docs-example">
+                                    <label class="example-label-title">Thresholds</label>
+                                    <pf-utilization-bar-chart id="thresholdExample1" chart-title="RAM Usage" used="10" total="100" units="MB" threshold-warning="60" threshold-error="85"></pf-utilization-bar-chart>
+                                </div>
+<pre class=" language-jsx"><code class=" language-jsx">import React from 'react';
+import { UtilizationBarChart } from 'react-patternfly-shims';
+
+class Example extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { used: 10 };
+    }
+	componentDidMount() {
+        setInterval(() =&gt; {
+            if (this.state.used &gt; 100) {
+                this.setState({used: 10});
+            } else {
+                this.setState({used: this.state.used + 10});
+            }
+        }, 1900);
+	}
+    onThresholdSet(event) {
+        //monitor threshold here!
+        let threshold = event.detail.threshold;
+    }
+    render() {
+        return (
+            &lt;UtilizationBarChart 
+                layout=&quot;default&quot;
+                chartTitle=&quot;RAM Usage&quot; 
+                used={this.state.used}
+                total=&quot;100&quot;
+                units=&quot;MB&quot;
+                thresholdWarning=&quot;60&quot;
+                thresholdError=&quot;85&quot;
+                onThresholdSet={ this.onThresholdSet.bind(this)}
+                /&gt;
+        )
+    }
+}
+
+export default Example;
+</code></pre>
+                            </div><!--//section-block-->
+                        </section><!--//doc-section-->
+
+                        <!-- Tabs -->
+                        <section id="tabs" class="doc-section">
+                            <h2 class="section-title">Tabs</h2>
+                            <div class="section-block">
+                                <div class="docs-example">
+                                    <pf-tabs id="pf-tabs">
+                                        <pf-tab tabTitle="Cupcakes">
+                                            <p>Cupcake ipsum dolor. Sit amet topping. Jelly-o cake ice cream jujubes marshmallow cotton candy.</p>
+                                        </pf-tab>
+                                        <pf-tab tabTitle="Caramels">
+                                            <p>Candy caramels sweet roll macaroon pastry cupcake liquorice. Cookie I love topping I love cookie toffee chocolate bar. Jelly-o sweet roll I love dessert powder.</p>
+                                        </pf-tab>
+                                    </pf-tabs>
+                                    <script>
+                                        var pfTabs = document.querySelector('#pf-tabs');
+                                        pfTabs.addEventListener('tabChanged', function(ev){
+                                            alert('holy guacamole! Active tab is now: ' + ev.detail);
+                                        });
+                                    </script>
+                                </div>
+<pre class=" language-jsx"><code class=" language-jsx">import React from 'react';
+import { Tab, Tabs } from 'react-patternfly-shims';
+
+class Example extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    onTabChanged(event) {
+        alert('holy guacamole! Active tab is now: ' + event.detail);
+    }
+    render() {
+        return (
+            &lt;Tabs tabChanged={ this.onTabChanged.bind(this)}&gt;
+                &lt;Tab tabTitle=&quot;Cupcakes&quot; active={true}&gt;
+                    &lt;p&gt;Cupcake ipsum dolor. Sit amet topping. Jelly-o cake ice 
+                    cream jujubes marshmallow cotton candy.&lt;/p&gt;
+                &lt;/Tab&gt;
+                &lt;Tab tabTitle=&quot;Caramels&quot;&gt;
+                    &lt;p&gt;Candy caramels sweet roll macaroon pastry cupcake liquorice. 
+                    Cookie I love topping I love cookie toffee chocolate bar. 
+                    Jelly-o sweet roll I love dessert powder.&lt;/p&gt;
+                &lt;/Tab&gt;
+            &lt;/Tabs&gt;
+        )
+    }
+}
+
+export default Example;
+</code></pre>
+                            </div><!--//section-block-->
+                        </section><!--//doc-section-->
+
+                        <!-- Tooltips -->
+                        <section id="tooltips" class="doc-section">
+                            <h2 class="section-title">Tooltips</h2>
+                            <div class="section-block">
+                                <div class="docs-example">
+                                    <pf-tooltip id="tooltip-left" placement="left" targetSelector="#btn-left">
+                                        <span>Port side</span>
+                                    </pf-tooltip>
+                                    <button id="btn-left" type="button" class="btn btn-primary btn-lg"         aria-describedby="tooltip-left">Left</button>
+
+                                    <pf-tooltip id="tooltip-top" placement="top" targetSelector="#btn-top">
+                                        <span>Bow side</span>
+                                    </pf-tooltip>
+                                    <button id="btn-top" type="button" class="btn btn-secondary btn-lg" aria-describedby="tooltip-top">Top</button>
+
+                                    <pf-tooltip id="tooltip-right" placement="right" targetSelector="#btn-right">
+                                        <span>Starboard side</span>
+                                    </pf-tooltip>
+                                    <button id="btn-right" type="button" class="btn btn-warning btn-lg" aria-describedby="tooltip-right">Right</button>
+
+                                    <pf-tooltip id="tooltip-bottom" placement="bottom" targetSelector="#btn-bottom">
+                                        <span>Stern side</span>
+                                    </pf-tooltip>
+                                    <button id="btn-bottom" type="button" class="btn btn-danger btn-lg" aria-describedby="tooltip-bottom">Bottom</button>
+                                </div>
+<pre class=" language-jsx"><code class=" language-jsx">import React from 'react';
+import { Tooltip } from 'react-patternfly-shims';
+
+class Example extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+	    &lt;div&gt;
+            &lt;Tooltip animation=&quot;fade&quot; targetSelector=&quot;#btn-left&quot; placement=&quot;left&quot; delay={50} duration={150} containerSelector=&quot;body&quot;&gt;
+                &lt;span&gt;Port side&lt;/span&gt;
+            &lt;/Tooltip&gt;
+            &lt;button id=&quot;btn-left&quot; type=&quot;button&quot; class=&quot;btn btn-primary btn-lg&quot;&gt;Left&lt;/button&gt;
+
+            &lt;Tooltip animation=&quot;fade&quot; targetSelector=&quot;#btn-top&quot; placement=&quot;top&quot; delay={50} duration={150} containerSelector=&quot;body&quot;&gt;
+                &lt;span&gt;Bow side&lt;/span&gt;
+            &lt;/Tooltip&gt;
+            &lt;button id=&quot;btn-top&quot; type=&quot;button&quot; class=&quot;btn btn-primary btn-lg&quot;&gt;Top&lt;/button&gt;
+
+            &lt;Tooltip animation=&quot;fade&quot; targetSelector=&quot;#btn-right&quot; placement=&quot;right&quot; delay={50} duration={150} containerSelector=&quot;body&quot;&gt;
+                &lt;span&gt;Starboard side&lt;/span&gt;
+            &lt;/Tooltip&gt;
+            &lt;button id=&quot;btn-right&quot; type=&quot;button&quot; class=&quot;btn btn-primary btn-lg&quot;&gt;Right&lt;/button&gt;
+
+            &lt;Tooltip animation=&quot;fade&quot; targetSelector=&quot;#btn-bottom&quot; placement=&quot;bottom&quot; delay={50} duration={150} containerSelector=&quot;body&quot;&gt;
+                &lt;span&gt;Stern side&lt;/span&gt;
+            &lt;/Tooltip&gt;
+            &lt;button id=&quot;btn-bottom&quot; type=&quot;button&quot; class=&quot;btn btn-primary btn-lg&quot;&gt;Bottom&lt;/button&gt;
+	    &lt;/div&gt;
+        )
+    }
+}
+
+export default Example;
+</code></pre>
+                            </div><!--//section-block-->
+                        </section><!--//doc-section-->
+
+                        <section id="demo-apps" class="doc-section">
+                            <h2 class="section-title">Demo Apps</h2>
+                            <div class="section-block">
+                                <p>The following <a href="https://react-static-pf-webcompo-8dd7f.firebaseapp.com/" target="_blank">app</a> demonstrates use of React with Patternfly web components.</p>
+
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-5 col-xs-12">
+                                        <h6>Components List</h6>
+                                        <ul class="list list-unstyled">
+                                            <li><a href="react.html#alerts"><i class="fa fa-check"></i> Alerts </a></li>
+                                            <li><a href="react.html#tabs"><i class="fa fa-check"></i> Tabs</a></li>
+                                            <li><a href="react.html#tooltips"><i class="fa fa-check"></i> Tooltips</a></li>
+                                        </ul>
+                                        <br/>
+                                        <h6>Github Project</h6>
+                                        <a href="https://github.com/patternfly-webcomponents/react-static-pf-webcomponents">Link to Project</a>
+                                    </div>
+                                    <div class="col-md-8 col-sm-5 col-xs-12">
+                                        <h6>Screenshot</h6>
+                                        <div class="screenshot-holder">
+                                            <a href="https://react-static-pf-webcompo-8dd7f.firebaseapp.com/" target="_blank"><img class="img-responsive" src="assets/images/demo/react-demo.png" alt="screenshot" /></a>
+                                            </div> 
+                                    </div>
+                                </div><!--//row-->
+                            </div><!--//section-block-->
+                        </section><!--//doc-section-->
+                        
+                    </div><!--//content-inner-->
+                </div><!--//doc-content-->
+                <div class="doc-sidebar">
+                    <nav id="doc-nav">
+                        <ul id="doc-menu" class="nav doc-menu hidden-xs" data-spy="affix">
+                            <li><a class="scrollto" href="#overview">Overview</a></li>
+                            <li><a class="scrollto" href="#alerts">Alerts</a></li>
+                            <li>
+                                <a class="scrollto" href="#charts">Charts</a>
+                                <ul class="nav doc-sub-menu">
+                                    <li><a class="scrollto" href="#utilization-bar">Utilization Bar</a></li>
+                                </ul><!--//nav-->
+                            </li>
+                            <li><a class="scrollto" href="#tabs">Tabs</a></li>
+                            <li><a class="scrollto" href="#tooltips">Tooltips</a></li>
+                            <li><a class="scrollto" href="#demo-apps">Demo Apps</a></li>
+                        </ul><!--//doc-menu-->
+                    </nav>
+                </div><!--//doc-sidebar-->
+            </div><!--//doc-body-->              
+        </div><!--//container-->
+    </div><!--//doc-wrapper-->
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="text-center col">
+                    <p class="social">
+                        <iframe src="https://ghbtns.com/github-btn.html?user=patternfly-webcomponents&amp;repo=patternfly-webcomponents&amp;type=star&amp;count=true" frameborder="0" scrolling="0" width="80" height="30px"></iframe>
+                        <iframe src="https://ghbtns.com/github-btn.html?user=patternfly-webcomponents&amp;repo=patternfly-webcomponents&amp;type=fork&amp;count=true" frameborder="0" scrolling="0" width="80" height="30px"></iframe>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+     
+    <!-- Main Javascript -->          
+    <script src="assets/plugins/jquery-1.12.3.min.js"></script>
+    <script src="assets/js/prism.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+</body>
+</html>

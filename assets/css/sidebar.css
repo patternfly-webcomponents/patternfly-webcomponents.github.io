@@ -1,0 +1,140 @@
+/* ======= Doc Styling ======= */
+.doc-wrapper {
+  padding: 15px 0;
+}
+.doc-body {
+  position: relative;
+}
+.doc-header {
+  margin-bottom: 30px;
+}
+.doc-header .doc-title {
+  color: #39a5dc;
+  font-size: 36px;
+}
+.doc-content {
+  margin-left: 230px;
+}
+.section-block {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+  .doc-content {
+    margin-left: 0;
+  }
+}
+
+/* Sidebar */
+.docs-sidebar .nav-item {
+  padding: .2rem 0 .2rem 0;
+}
+
+.docs-sidebar .nav-link {
+  color: #888;
+  padding: .3rem .5rem .3rem 1rem;
+  border-left: 2px solid transparent;
+}
+
+.docs-sidebar .nav-link:hover {
+  color: #777
+}
+
+.docs-sidebar .nav-link.active {
+  color: #666;
+  border-left: 2px solid #d9534f;
+}
+
+.doc-sidebar {
+  width: 200px;
+}
+.doc-section {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.doc-menu {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+.doc-menu > li {
+  margin-bottom: 5px;
+}
+.doc-menu > li > a {
+  display: block;
+  padding: 5px 15px;
+  border-left: 4px solid transparent;
+  color: #616670;
+}
+.doc-menu > li > a:hover,
+.doc-menu > li > a:focus {
+  color: #39a5dc;
+  text-decoration: none;
+  background: none;
+}
+
+.body-blue .doc-menu > li > a:hover,
+.body-blue .doc-menu > li > a:focus {
+  color: #39a5dc;
+}
+.doc-menu > li.active > a {
+  background: none;
+  border-left: 4px solid #39a5dc;
+  color: #39a5dc;
+  font-weight: 600;
+}
+.body-blue .doc-menu > li.active > a {
+  color: #39a5dc;
+  border-color: #39a5dc;
+}
+.doc-sub-menu {
+  list-style: none;
+  padding-left: 0;
+}
+.doc-sub-menu > li {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+.doc-sub-menu > li:first-child {
+  padding-top: 5px;
+}
+.doc-sub-menu > li > a {
+  display: block;
+  color: #616670;
+  padding: 0;
+  padding-left: 34px;
+  background: none;
+}
+.doc-sub-menu > li > a:hover {
+  color: #39a5dc;
+  text-decoration: none;
+  background: none;
+}
+.body-blue .doc-sub-menu > li > a:hover {
+  color: #39a5dc;
+}
+.doc-sub-menu > li > a:focus {
+  background: none;
+}
+.doc-sub-menu > li.active > a {
+  background: none;
+  color: #39a5dc;
+}
+.body-blue .doc-sub-menu > li.active > a {
+  color: #39a5dc;
+}
+.affix-top {
+  position: absolute;
+  top: 15px;
+}
+.affix {
+  top: 15px;
+}
+.affix,
+.affix-bottom {
+  width: 230px;
+}
+.affix-bottom {
+  position: absolute;
+}
