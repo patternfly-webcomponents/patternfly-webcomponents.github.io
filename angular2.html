@@ -93,9 +93,15 @@
                         <section id="overview" class="doc-section">
                             <h2 class="section-title">Overview</h2>
                             <div class="section-block">
-                                <p>Angular 2 Component extensions (shims) for Patternfly web components are implemented to enhance the Angular2 experience and ease consumption in the Angular2 framework.</p>
+                                <p>Angular 2 Component extensions (shims) for Patternfly web components are implemented to enhance the Angular 2 experience and ease consumption in the Angular 2 framework.</p>
                                 <p> Angular 2 Components require the core component dependencies mentioned in <a href="components.html">Components</a> along with the following extension <a href="https://github.com/patternfly-webcomponents/angular2-patternfly-shims">library</a>:</p>
                                 <pre class="language-bash"><code class="language-bash">npm install --save angular2-patternfly-shims</code></pre>
+                                <p> Add the Custom Elements schema to your <code>@NgModule</code>:</p>
+<pre class="language-javascript"><code class="language-javascript">import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+@NgModule({
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+})
+</code></pre>
                             </div><!--//section-block-->
                         </section><!--//doc-section-->
 
@@ -116,8 +122,7 @@
 @Component({
     selector: 'example',
     templateUrl: 'example.component.html',
-    styleUrls: ['example.component.css'],
-    directives: [AlertComponent]
+    styleUrls: ['example.component.css']
 })
 export class ExampleComponent {
     constructor() {
@@ -147,13 +152,11 @@ export class ExampleComponent {
 @Component({
     selector: 'example',
     templateUrl: 'example.component.html',
-    styleUrls: ['example.component.css'],
-    directives: [UtilizationBarComponent]
+    styleUrls: ['example.component.css']
 })
 export class ExampleComponent implements OnInit {
 
-    constructor() {
-    }
+    constructor() {}
 
     ngOnInit() {
         this.used = 10;
@@ -195,40 +198,34 @@ export class ExampleComponent implements OnInit {
                                     </script>
                                 </div>
                                 <pre class=" language-html"><code class=" language-html">&lt;pf-tabs #pfTabs class=&quot;nav nav-tabs&quot; (tabChanged)=&quot;onTabChanged($event)&quot;&gt;
-    &lt;pf-tab [tabTitle]=&quot;tabs[0].title&quot; [attr.active]=&quot;tabs[0].isActive ? true : null&quot;&gt;
+    &lt;pf-tab tabTitle=&quot;Cupcakes&quot;&gt;
         &lt;p&gt;Cupcake ipsum dolor. Sit amet topping. Jelly-o cake ice cream jujubes marshmallow cotton candy.&lt;/p&gt;
     &lt;/pf-tab&gt;
-    &lt;pf-tab [tabTitle]=&quot;tabs[1].title&quot; [attr.active]=&quot;tabs[1].isActive ? true : null&quot;&gt;
+    &lt;pf-tab tabTitle=&quot;Caramels&quot;&gt;
         &lt;p&gt;Candy caramels sweet roll macaroon pastry cupcake liquorice. Cookie I love topping I love cookie toffee chocolate bar. Jelly-o sweet roll I love dessert powder.&lt;/p&gt;
     &lt;/pf-tab&gt;
 &lt;/pf-tabs&gt;
 </code></pre>
-                                <pre class="language-javascript"><code class="language-javascript">import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+                                <pre class="language-javascript"><code class="language-javascript">import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
     selector: 'example',
     templateUrl: 'example.component.html',
     styleUrls: ['example.component.css']
 })
-export class ExampleComponent implements OnInit {
+export class ExampleComponent implements AfterViewInit {
 
     @ViewChild('pfTabs') pfTabs:ElementRef;
 
-    tabs = [
-        {title: 'Cupcakes', isActive : true},
-        {title: 'Caramels', isActive : false}
-    ];
-
-    constructor() {
-    }
+    constructor() {}
 
     onTabChanged(event: Event) {
         //active tab is now: event.detail
     }
 
-    ngOnInit() {
+    ngAfterViewInit() {
         //programmatically changes the active tab
-        this.pfTabs.nativeElement.setActiveTab(this.tabs[1].title);
+        this.pfTabs.nativeElement.setActiveTab('Caramels');
     }
 }
 </code></pre>
@@ -272,24 +269,29 @@ export class ExampleComponent implements OnInit {
 &lt;pf-tooltip id=&quot;tooltip-right&quot; placement=&quot;right&quot; targetSelector=&quot;#btn-right&quot;&gt;{{tooltipRight}}&lt;/pf-tooltip&gt;
 &lt;button id=&quot;btn-right&quot; type=&quot;button&quot; class=&quot;btn btn-danger btn-lg&quot; aria-describedby=&quot;tooltip-right&quot;&gt;Right&lt;/button&gt;
 </code></pre>
+<p> Import the <code>Tooltip</code> extension into your component's module: </p>
+<pre class="language-javascript"><code class="language-javascript">import { TooltipComponent } from 'angular2-patternfly-shims/lib/Tooltip';
+@NgModule({
+  declarations: [
+    TooltipComponent
+  ]
+})
+export class AppModule { }
+</code></pre>
+<p> Add bindings in your component: </p>
                                 <pre class="language-javascript"><code class="language-javascript">import { Component } from '@angular/core';
-import { TooltipComponent } from 'angular2-patternfly-shims/lib/Tooltip';
-
 @Component({
     selector: 'example',
     templateUrl: 'example.component.html',
-    styleUrls: ['example.component.css'],
-    directives: [TooltipComponent]
+    styleUrls: ['example.component.css']
 })
 export class ExampleComponent {
-
     constructor() {
         this.tooltipLeft = &quot;Look Ma!&quot;;
         this.tooltipTop = &quot;It still binds!&quot;;
         this.tooltipBottom = &quot;Oh, that's great.&quot;;
         this.tooltipRight = &quot;Must be an observer.&quot;;
     }
-
 }
 </code></pre>
                             </div><!--//section-block-->
