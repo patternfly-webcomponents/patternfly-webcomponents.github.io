@@ -10,8 +10,9 @@
     <meta name="author" content="">    
     <link rel="shortcut icon" href="favicon.ico">
     <!-- Global CSS -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/patternfly/3.18.1/css/patternfly.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/patternfly/3.18.1/css/patternfly-additions.min.css"> 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/css/patternfly.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/patternfly/3.24.0/css/patternfly-additions.min.css"> 
+    <link rel="stylesheet" href="//cdn.rawgit.com/Agathver/patternfly-webcomponents/pf-accordion-dist/dist/css/patternfly-webcomponents.css"> 
     <!-- Plugins CSS -->    
     <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="assets/css/custom.css">
@@ -38,8 +39,9 @@
     </style>
 
     <!-- web components -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.23/webcomponents-lite.min.js"></script>
-    <script src="//rawgit.com/patternfly-webcomponents/patternfly-webcomponents/master-dist/dist/js/patternfly.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.24/webcomponents-lite.min.js"></script>
+    <!-- script src="//cdn.rawgit.com/patternfly-webcomponents/patternfly-webcomponents/master-dist/dist/js/patternfly.js"></script -->
+    <script src="//cdn.rawgit.com/Agathver/patternfly-webcomponents/pf-accordion-dist/dist/js/patternfly.js"></script>
 </head> 
 
 <body class="body-blue">
@@ -95,7 +97,7 @@
                             <div class="section-block">
                                 <p>Patternfly web components require <code>patternfly.css</code>, <code>patternfly-additions.css</code>, and <code>patternfly-webcomponents.css</code>.
                                 </p>
-<pre class=" language-html"><code class=" language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;node_modules/patternfly/dist/css/patternfly.css&quot;&gt;
+                                <pre class=" language-html"><code class=" language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;node_modules/patternfly/dist/css/patternfly.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;node_modules/patternfly/dist/css/patternfly-additions.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;node_modules/patternfly-webcomponents/dist/css/patternfly-webcomponents.css&quot;&gt;
 </code></pre>
@@ -104,6 +106,287 @@
 <pre class=" language-html"><code class=" language-html">&lt;script src="node_modules/webcomponents.js/webcomponents-lite.min.js"&gt;&lt;/script&gt;
 &lt;script src="node_modules/patternfly-webcomponents/dist/js/patternfly.js"&gt;&lt;/script&gt;
 </code></pre>
+                            </div><!--//section-block-->
+                        </section><!--//doc-section-->
+
+                        <!-- Accordion -->
+                        <section id="accordion" class="doc-section">
+                            <h2 class="section-title">Accordion</h2>
+                            <div class="section-block">
+                                <div class="docs-example">
+                                    <pf-accordion>
+                                        <pf-accordion-panel>
+                                            <pf-accordion-heading>
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" href="#">Lorem ipsum</a>
+                                                </h4>
+                                            </pf-accordion-heading>
+                                            <pf-accordion-template>
+                                                <pf-accordion-body>
+                                                    Praesent sagittis est et arcu fringilla placerat. Cras erat ante, dapibus non mauris ac, volutpat sollicitudin ligula. Morbi gravida nisl vel risus tempor, sit amet luctus erat tempus. Curabitur blandit sem non pretium bibendum. Donec eleifend non turpis vitae vestibulum. Vestibulum ut sem ac nunc posuere blandit sed porta lorem. Cras rutrum velit vel leo iaculis imperdiet.
+                                                </pf-accordion-body>
+                                            </pf-accordion-template>
+                                        </pf-accordion-panel>
+                                        <pf-accordion-panel>
+                                            <pf-accordion-heading>
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" href="#">Dolor sit amet</a>
+                                            </h4>
+                                            </pf-accordion-heading>
+                                            <pf-accordion-template>
+                                                <div class="panel-body">
+                                                    Donec consequat dignissim neque, sed suscipit quam egestas in. Fusce bibendum laoreet lectus commodo interdum. Vestibulum odio ipsum, tristique et ante vel, iaculis placerat nulla. Suspendisse iaculis urna feugiat lorem semper, ut iaculis risus tempus.
+                                                </div>
+                                            </pf-accordion-template>
+                                        </pf-accordion-panel>
+                                        <pf-accordion-panel>
+                                            <pf-accordion-heading>
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" href="#">Consectetur</a>
+                                                </h4>
+                                            </pf-accordion-heading>
+                                            <pf-accordion-template>
+                                                <pf-accordion-body>
+                                                    Curabitur nisl quam, interdum a venenatis a, consequat a ligula. Nunc nec lorem in erat rhoncus lacinia at ac orci. Sed nec augue congue, vehicula justo quis, venenatis turpis. Nunc quis consectetur purus. Nam vitae viverra lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu augue felis. Maecenas in dignissim purus, quis pulvinar lectus. Vivamus euismod ultrices diam, in mattis nibh.
+                                                </pf-accordion-body>
+                                            </pf-accordion-template>
+                                        </pf-accordion-panel>
+                                    </pf-accordion>                                    
+                                </div>
+                                <pre class=" language-html"><code class=" language-html">&lt;pf-accordion&gt;
+    &lt;pf-accordion-panel&gt;
+        &lt;pf-accordion-heading&gt;
+            &lt;h4 class=&quot;panel-title&quot;&gt;
+                &lt;a data-toggle=&quot;collapse&quot; href=&quot;#&quot;&gt;
+                    Lorem ipsum
+                &lt;/a&gt;
+            &lt;/h4&gt;
+        &lt;/pf-accordion-heading&gt;
+        &lt;pf-accordion-template&gt;
+            &lt;pf-accordion-body&gt;
+                Praesent sagittis est et arcu fringilla placerat. Cras erat ante, dapibus non mauris ac, volutpat sollicitudin ligula. Morbi gravida nisl vel risus tempor, sit amet luctus erat tempus. Curabitur blandit sem non pretium bibendum. Donec eleifend non turpis vitae vestibulum. Vestibulum ut sem ac nunc posuere blandit sed porta lorem. Cras rutrum velit vel leo iaculis imperdiet.
+            &lt;/pf-accordion-body&gt;
+        &lt;/pf-accordion-template&gt;
+    &lt;/pf-accordion-panel&gt;
+    &lt;pf-accordion-panel&gt;
+        &lt;pf-accordion-heading&gt;
+        &lt;h4 class=&quot;panel-title&quot;&gt;
+            &lt;a data-toggle=&quot;collapse&quot; href=&quot;#&quot;&gt;
+                Dolor sit amet
+            &lt;/a&gt;
+        &lt;/h4&gt;
+        &lt;/pf-accordion-heading&gt;
+        &lt;pf-accordion-template&gt;
+            &lt;div class=&quot;panel-body&quot;&gt;
+                Donec consequat dignissim neque, sed suscipit quam egestas in. Fusce bibendum laoreet lectus commodo interdum. Vestibulum odio ipsum, tristique et ante vel, iaculis placerat nulla. Suspendisse iaculis urna feugiat lorem semper, ut iaculis risus tempus.
+            &lt;/div&gt;
+        &lt;/pf-accordion-template&gt;
+    &lt;/pf-accordion-panel&gt;
+    &lt;pf-accordion-panel&gt;
+        &lt;pf-accordion-heading&gt;
+            &lt;h4 class=&quot;panel-title&quot;&gt;
+                &lt;a data-toggle=&quot;collapse&quot; href=&quot;#&quot;&gt;
+                Consectetur
+                &lt;/a&gt;
+            &lt;/h4&gt;
+        &lt;/pf-accordion-heading&gt;
+        &lt;pf-accordion-template&gt;
+            &lt;pf-accordion-body&gt;
+                Curabitur nisl quam, interdum a venenatis a, consequat a ligula. Nunc nec lorem in erat rhoncus lacinia at ac orci. Sed nec augue congue, vehicula justo quis, venenatis turpis. Nunc quis consectetur purus. Nam vitae viverra lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu augue felis. Maecenas in dignissim purus, quis pulvinar lectus. Vivamus euismod ultrices diam, in mattis nibh.
+            &lt;/pf-accordion-body&gt;
+        &lt;/pf-accordion-template&gt;
+    &lt;/pf-accordion-panel&gt;
+&lt;/pf-accordion&gt;</code></pre>
+                                <p>With context modifiers</p>
+                                <div class="docs-example">
+                                    <pf-accordion>
+                                        <pf-accordion-panel class="panel-info">
+                                            <pf-accordion-heading>
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" href="#">New product available</a>
+                                                </h4>
+                                            </pf-accordion-heading>
+                                            <pf-accordion-template>
+                                                <pf-accordion-body>
+                                                    <p>You can read this anytime</p>
+                                                </pf-accordion-body>
+                                            </pf-accordion-template>
+                                        </pf-accordion-panel>
+                                        <pf-accordion-panel class="panel-success">
+                                            <pf-accordion-heading>
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" href="#">Vulnerebility check</a></a>
+                                                </h4>
+                                            </pf-accordion-heading>
+                                            <pf-accordion-template>
+                                                <pf-accordion-body>
+                                                    <h3>No known security vulnerebility</h3>
+                                                    <p>All good!</p>
+                                                </pf-accordion-body>
+                                            </pf-accordion-template>
+                                        </pf-accordion-panel>
+                                        <pf-accordion-panel class="panel-warning">
+                                            <pf-accordion-heading>
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" href="#">Network diagnostics</a>
+                                                </h4>
+                                            </pf-accordion-heading>
+                                            <pf-accordion-template>
+                                                <pf-accordion-body>
+                                                    <h3>Degraded network performance</h3>
+                                                    <p>Something is wrong, you should check this immediately.</p>
+                                                </pf-accordion-body>
+                                            </pf-accordion-template>
+                                        </pf-accordion-panel>
+                                        <pf-accordion-panel class="panel-danger">
+                                            <pf-accordion-heading>
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" href="#">Instance reachability tests</a></a>
+                                                </h4>
+                                            </pf-accordion-heading>
+                                            <pf-accordion-template>
+                                                <pf-accordion-body>
+                                                    <h3>5 instances failed the rechability tests</h3>
+                                                    <p>Take action immediately</p>
+                                                </pf-accordion-body>
+                                            </pf-accordion-template>
+                                        </pf-accordion-panel>                                      
+                                    </pf-accordion>
+                                </div>
+                                <pre class=" language-html"><code class=" language-html">&lt;pf-accordion&gt;
+    &lt;pf-accordion-panel class=&quot;panel-info&quot;&gt;
+        &lt;pf-accordion-heading&gt;
+            &lt;h4 class=&quot;panel-title&quot;&gt;
+                &lt;a data-toggle=&quot;collapse&quot; href=&quot;#&quot;&gt;New product available&lt;/a&gt;
+            &lt;/h4&gt;
+        &lt;/pf-accordion-heading&gt;
+        &lt;pf-accordion-template&gt;
+            &lt;pf-accordion-body&gt;
+                &lt;p&gt;You can read this anytime&lt;/p&gt;
+            &lt;/pf-accordion-body&gt;
+        &lt;/pf-accordion-template&gt;
+    &lt;/pf-accordion-panel&gt;
+    &lt;pf-accordion-panel class=&quot;panel-success&quot;&gt;
+        &lt;pf-accordion-heading&gt;
+            &lt;h4 class=&quot;panel-title&quot;&gt;
+                &lt;a data-toggle=&quot;collapse&quot; href=&quot;#&quot;&gt;Vulnerebility check&lt;/a&gt;&lt;/a&gt;
+            &lt;/h4&gt;
+        &lt;/pf-accordion-heading&gt;
+        &lt;pf-accordion-template&gt;
+            &lt;pf-accordion-body&gt;
+                &lt;h3&gt;No known security vulnerebility&lt;/h3&gt;
+                &lt;p&gt;All good!&lt;/p&gt;
+            &lt;/pf-accordion-body&gt;
+        &lt;/pf-accordion-template&gt;
+    &lt;/pf-accordion-panel&gt;
+    &lt;pf-accordion-panel class=&quot;panel-warning&quot;&gt;
+        &lt;pf-accordion-heading&gt;
+            &lt;h4 class=&quot;panel-title&quot;&gt;
+                &lt;a data-toggle=&quot;collapse&quot; href=&quot;#&quot;&gt;Network diagnostics&lt;/a&gt;
+            &lt;/h4&gt;
+        &lt;/pf-accordion-heading&gt;
+        &lt;pf-accordion-template&gt;
+            &lt;pf-accordion-body&gt;
+                &lt;h3&gt;Degraded network performance&lt;/h3&gt;
+                &lt;p&gt;Something is wrong, you should check this immediately.&lt;/p&gt;
+            &lt;/pf-accordion-body&gt;
+        &lt;/pf-accordion-template&gt;
+    &lt;/pf-accordion-panel&gt;
+    &lt;pf-accordion-panel class=&quot;panel-danger&quot;&gt;
+        &lt;pf-accordion-heading&gt;
+            &lt;h4 class=&quot;panel-title&quot;&gt;
+                &lt;a data-toggle=&quot;collapse&quot; href=&quot;#&quot;&gt;Instance reachability tests&lt;/a&gt;&lt;/a&gt;
+            &lt;/h4&gt;
+        &lt;/pf-accordion-heading&gt;
+        &lt;pf-accordion-template&gt;
+            &lt;pf-accordion-body&gt;
+                &lt;h3&gt;5 instances failed the rechability tests&lt;/h3&gt;
+                &lt;p&gt;Take action immediately&lt;/p&gt;
+            &lt;/pf-accordion-body&gt;
+        &lt;/pf-accordion-template&gt;
+    &lt;/pf-accordion-panel&gt;
+&lt;/pf-accordion&gt;</code></pre>
+                            <p>Fixed witdth accordions</p>
+                            <div class="docs-example">
+                                    <pf-accordion fixedheight style="height: 150px">
+                                        <pf-accordion-panel>
+                                            <pf-accordion-heading>
+                                                <h4 class="panel-title">
+                                                    <a data-toggle="collapse" href="#">Lorem ipsum</a>
+                                                </h4>
+                                            </pf-accordion-heading>
+                                            <pf-accordion-template>
+                                                <pf-accordion-body>
+                                                    But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.
+                                                </pf-accordion-body>
+                                            </pf-accordion-template>
+                                        </pf-accordion-panel>
+                                        <pf-accordion-panel>
+                                            <pf-accordion-heading>
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" href="#">Dolor sit amet</a>
+                                            </h4>
+                                            </pf-accordion-heading>
+                                            <pf-accordion-template>
+                                                <div class="panel-body">
+                                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+                                                </div>
+                                            </pf-accordion-template>
+                                        </pf-accordion-panel>
+                                </div>
+                                <pre class=" language-html"><code class=" language-html">&lt;pf-accordion&gt;
+    &lt;pf-accordion-panel class=&quot;panel-info&quot;&gt;
+        &lt;pf-accordion-heading&gt;
+            &lt;h4 class=&quot;panel-title&quot;&gt;
+                &lt;a data-toggle=&quot;collapse&quot; href=&quot;#&quot;&gt;New product available&lt;/a&gt;
+            &lt;/h4&gt;
+        &lt;/pf-accordion-heading&gt;
+        &lt;pf-accordion-template&gt;
+            &lt;pf-accordion-body&gt;
+                &lt;p&gt;You can read this anytime&lt;/p&gt;
+            &lt;/pf-accordion-body&gt;
+        &lt;/pf-accordion-template&gt;
+    &lt;/pf-accordion-panel&gt;
+    &lt;pf-accordion-panel class=&quot;panel-success&quot;&gt;
+        &lt;pf-accordion-heading&gt;
+            &lt;h4 class=&quot;panel-title&quot;&gt;
+                &lt;a data-toggle=&quot;collapse&quot; href=&quot;#&quot;&gt;Vulnerebility check&lt;/a&gt;&lt;/a&gt;
+            &lt;/h4&gt;
+        &lt;/pf-accordion-heading&gt;
+        &lt;pf-accordion-template&gt;
+            &lt;pf-accordion-body&gt;
+                &lt;h3&gt;No known security vulnerebility&lt;/h3&gt;
+                &lt;p&gt;All good!&lt;/p&gt;
+            &lt;/pf-accordion-body&gt;
+        &lt;/pf-accordion-template&gt;
+    &lt;/pf-accordion-panel&gt;
+    &lt;pf-accordion-panel class=&quot;panel-warning&quot;&gt;
+        &lt;pf-accordion-heading&gt;
+            &lt;h4 class=&quot;panel-title&quot;&gt;
+                &lt;a data-toggle=&quot;collapse&quot; href=&quot;#&quot;&gt;Network diagnostics&lt;/a&gt;
+            &lt;/h4&gt;
+        &lt;/pf-accordion-heading&gt;
+        &lt;pf-accordion-template&gt;
+            &lt;pf-accordion-body&gt;
+                &lt;h3&gt;Degraded network performance&lt;/h3&gt;
+                &lt;p&gt;Something is wrong, you should check this immediately.&lt;/p&gt;
+            &lt;/pf-accordion-body&gt;
+        &lt;/pf-accordion-template&gt;
+    &lt;/pf-accordion-panel&gt;
+    &lt;pf-accordion-panel class=&quot;panel-danger&quot;&gt;
+        &lt;pf-accordion-heading&gt;
+            &lt;h4 class=&quot;panel-title&quot;&gt;
+                &lt;a data-toggle=&quot;collapse&quot; href=&quot;#&quot;&gt;Instance reachability tests&lt;/a&gt;&lt;/a&gt;
+            &lt;/h4&gt;
+        &lt;/pf-accordion-heading&gt;
+        &lt;pf-accordion-template&gt;
+            &lt;pf-accordion-body&gt;
+                &lt;h3&gt;5 instances failed the rechability tests&lt;/h3&gt;
+                &lt;p&gt;Take action immediately&lt;/p&gt;
+            &lt;/pf-accordion-body&gt;
+        &lt;/pf-accordion-template&gt;
+    &lt;/pf-accordion-panel&gt;
+&lt;/pf-accordion&gt;</code></pre>
                             </div><!--//section-block-->
                         </section><!--//doc-section-->
 
@@ -267,6 +550,7 @@ thresholdExample1.addEventListener('thresholdSet', e =&gt; {
                     <nav id="doc-nav">
                         <ul id="doc-menu" class="nav doc-menu hidden-xs" data-spy="affix">
                             <li><a class="scrollto" href="#overview">Overview</a></li>
+                            <li><a class="scrollto" href="#accordion">Accordion</a></li>
                             <li><a class="scrollto" href="#alerts">Alerts</a></li>
                             <li>
                                 <a class="scrollto" href="#charts">Charts</a>
