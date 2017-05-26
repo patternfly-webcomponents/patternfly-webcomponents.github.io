@@ -1,152 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Patternfly Web Components</title>
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">    
-    <link rel="shortcut icon" href="favicon.ico">
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/patternfly/3.18.1/css/patternfly.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/patternfly/3.18.1/css/patternfly-additions.min.css"> 
-    <!-- Plugins CSS -->    
-    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
-    <link rel="stylesheet" href="assets/css/sidebar.css">
+  <title>Patternfly Web Components</title>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="favicon.ico">
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/patternfly/3.18.1/css/patternfly.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/patternfly/3.18.1/css/patternfly-additions.min.css">
+  <link rel="stylesheet" href="//rawgit.com/patternfly-webcomponents/patternfly-webcomponents/master-dist/dist/css/patternfly-webcomponents.css">
 
-    <!-- todo: remove these web component styles and shim and source from patternfly.css in patternfly-webcomponents -->
-    <script>
-        if (typeof HTMLElement !== 'function'){
-        var _HTMLElement = function(){};
-        _HTMLElement.prototype = HTMLElement.prototype;
-        HTMLElement = _HTMLElement;
-        }
-    </script>
-    <style>
-    pf-alert {
-        display: block;
-    }
-    pf-alert .hidden {
-        display: none;
-    }
-    pf-tooltip {
-        display: none;
-    }
-    </style>
-
-    <!-- web components -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.23/webcomponents-lite.min.js"></script>
-    <script src="//rawgit.com/patternfly-webcomponents/patternfly-webcomponents/master-dist/dist/js/patternfly.js"></script>
-</head> 
+  <!-- Plugins CSS -->
+  <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="assets/css/sidebar.css">
+</head>
 
 <body class="body-blue">
-    <header id="header">
+  <header id="header">
     <nav class="navbar navbar-default">
-    <div class="container-fluid">
+      <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+            aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#"><img class="navbar-brand-icon" alt="brand" src="assets/images/logo-alt.svg"></a>
+          <a class="navbar-brand" href="#"><img class="navbar-brand-icon" alt="brand" src="assets/images/logo-alt.svg"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Frameworks <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="angular.html">Angular</a></li>
-                    <li><a href="angular2.html">Angular2</a></li>
-                    <li><a href="react.html">React</a></li>
-                </ul>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Frameworks <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="angular.html">Angular</a></li>
+                <li><a href="angular2.html">Angular2</a></li>
+                <li><a href="react.html">React</a></li>
+              </ul>
             </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="components.html">Components<span class="sr-only">(current)</span></a></li>
             <li><a href="https://github.com/patternfly-webcomponents/patternfly-webcomponents">Github</a></li>
-        </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
     </nav>
-    </header>
-    
+  </header>
 
-    <div class="doc-wrapper">
-        <div class="container">
-            <div id="doc-header" class="doc-header text-center">
-                <h1 class="doc-title">Web Components</h1>
-            </div><!--//doc-header-->
-            <div class="doc-body">
-                <div class="doc-content">
-                    <div class="content-inner">
 
-                        <!-- Overview -->
-                        <section id="overview" class="doc-section">
-                            <h2 class="section-title">Overview</h2>
-                            <div class="section-block">
-                                <p>Patternfly web components require <code>patternfly.css</code>, <code>patternfly-additions.css</code>, and <code>patternfly-webcomponents.css</code>.
-                                </p>
-<pre class=" language-html"><code class=" language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;node_modules/patternfly/dist/css/patternfly.css&quot;&gt;
+  <div class="doc-wrapper">
+    <div class="container">
+      <div id="doc-header" class="doc-header text-center">
+        <h1 class="doc-title">Web Components</h1>
+      </div>
+      <!--//doc-header-->
+      <div class="doc-body">
+        <div class="doc-content">
+          <div class="content-inner">
+
+            <!-- Overview -->
+            <section id="overview" class="doc-section">
+              <h2 class="section-title">Overview</h2>
+              <div class="section-block">
+                <p>Patternfly web components require <code>patternfly.css</code>, <code>patternfly-additions.css</code>, and
+                  <code>patternfly-webcomponents.css</code>.
+                </p>
+                <pre class=" language-html"><code class=" language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;node_modules/patternfly/dist/css/patternfly.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;node_modules/patternfly/dist/css/patternfly-additions.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;node_modules/patternfly-webcomponents/dist/css/patternfly-webcomponents.css&quot;&gt;
 </code></pre>
-                                <p>Components can be installed individually (using individual <code>*.js</code> files) or all at once (using <code>patternfly.js</code>). You will also likely want to include the web component <a href="https://github.com/webcomponents/webcomponentsjs">polyfill</a> for better browser support. 
-                                </p>
-<pre class=" language-html"><code class=" language-html">&lt;script src="node_modules/webcomponents.js/webcomponents-lite.min.js"&gt;&lt;/script&gt;
+                <p>Components can be installed individually (using individual <code>*.js</code> files) or all at once (using
+                  <code>patternfly.js</code>). You will also likely want to include the web component <a href="https://github.com/webcomponents/webcomponentsjs">polyfill</a>                  for better browser support.
+                </p>
+                <pre class=" language-html"><code class=" language-html">&lt;script src="node_modules/webcomponents.js/webcomponents-lite.min.js"&gt;&lt;/script&gt;
 &lt;script src="node_modules/patternfly-webcomponents/dist/js/patternfly.js"&gt;&lt;/script&gt;
 </code></pre>
-                            </div><!--//section-block-->
-                        </section><!--//doc-section-->
+              </div>
+              <!--//section-block-->
+            </section>
+            <!--//doc-section-->
 
-                        <!-- Alerts -->
-                        <section id="alerts" class="doc-section">
-                            <h2 class="section-title">Alerts</h2>
-                            <div class="section-block">
-                                <div class="docs-example">
-                                    <pf-alert type="success">Well done! You successfully read this important alert message. </pf-alert>
-                                    <pf-alert type="info">Heads up! This alert needs your attention, but it's not super important. </pf-alert>
-                                    <pf-alert type="warning" persistent="true">Warning! Better check yourself, you're not looking too good. </pf-alert>
-                                    <pf-alert type="danger" persistent="true" persistent-callback-fn="alert('Danger alert closed');">Danger! Something is really bad man.</pf-alert>
-                                </div>
-                                <pre class=" language-html"><code class=" language-html">&lt;pf-alert type="success"&gt;Well done! You successfully read this important alert message.&lt;/pf-alert&gt;
+            <!-- Alerts -->
+            <section id="alerts" class="doc-section">
+              <h2 class="section-title">Alerts</h2>
+              <div class="section-block">
+                <div class="docs-example">
+                  <pf-alert type="success">Well done! You successfully read this important alert message. </pf-alert>
+                  <pf-alert type="info">Heads up! This alert needs your attention, but it's not super important. </pf-alert>
+                  <pf-alert type="warning" persistent="true">Warning! Better check yourself, you're not looking too good. </pf-alert>
+                  <pf-alert type="danger" persistent="true" persistent-callback-fn="alert('Danger alert closed');">Danger! Something is really bad man.</pf-alert>
+                </div>
+                <pre class=" language-html"><code class=" language-html">&lt;pf-alert type="success"&gt;Well done! You successfully read this important alert message.&lt;/pf-alert&gt;
 &lt;pf-alert type=&quot;info&quot;&gt;Heads up! This alert needs your attention, but it's not super important. &lt;/pf-alert&gt;
 &lt;pf-alert type=&quot;warning&quot; persistent=&quot;true&quot;&gt;Warning! Better check yourself, you're not looking too good. &lt;/pf-alert&gt;
 &lt;pf-alert type=&quot;danger&quot; persistent=&quot;true&quot; persistent-callback-fn=&quot;alert('Danger alert closed');&quot;&gt;Danger! Something is really bad man.&lt;/pf-alert&gt;
 </code></pre>
-                            </div><!--//section-block-->
-                        </section><!--//doc-section-->
+              </div>
+              <!--//section-block-->
+            </section>
+            <!--//doc-section-->
 
-                        <!-- Charts -->
-                        <section id="charts" class="doc-section">
-                            <h2 class="section-title">Charts</h2>
-                            <div id="utilization-bar" class="section-block">
-                                <h3 class="block-title">Utilization Bar Chart</h3>
-                                <p>The Utilization Bar Chart depicts the percentage utilization ratio between used and available.</p>
-                                <div class="docs-example">
-                                    <label class="example-label-title">Default Layout</label>
-                                    <pf-utilization-bar-chart chart-title="RAM Usage" used="8" total="24" units="MB"></pf-utilization-bar-chart>
-                                </div>
-                                <pre class=" language-html"><code class=" language-html">&lt;pf-utilization-bar-chart chart-title=&quot;RAM Usage&quot; used=&quot;8&quot; total=&quot;24&quot; units=&quot;MB&quot;&gt;&lt;/pf-utilization-bar-chart&gt;
+            <!-- Charts -->
+            <section id="charts" class="doc-section">
+              <h2 class="section-title">Charts</h2>
+              <div id="utilization-bar" class="section-block">
+                <h3 class="block-title">Utilization Bar Chart</h3>
+                <p>The Utilization Bar Chart depicts the percentage utilization ratio between used and available.</p>
+                <div class="docs-example">
+                  <label class="example-label-title">Default Layout</label>
+                  <pf-utilization-bar-chart chart-title="RAM Usage" used="8" total="24" units="MB"></pf-utilization-bar-chart>
+                </div>
+                <pre class=" language-html"><code class=" language-html">&lt;pf-utilization-bar-chart chart-title=&quot;RAM Usage&quot; used=&quot;8&quot; total=&quot;24&quot; units=&quot;MB&quot;&gt;&lt;/pf-utilization-bar-chart&gt;
 </code></pre>
-                                <p>Thresholds can be set to indicate when warnings and errors have occurred.</p>
-                                <div class="docs-example">
-                                    <label class="example-label-title">Thresholds</label>
-                                    <pf-utilization-bar-chart id="thresholdExample1" chart-title="RAM Usage" used="10" total="100" units="MB" threshold-warning="60" threshold-error="85"></pf-utilization-bar-chart>
-                                    <div>Listening for Threshold Change Events: <span class="" id="thresholdChangedText"></span></div>
-                                </div>
-                                <pre class=" language-html"><code class=" language-html">&lt;pf-utilization-bar-chart id=&quot;thresholdExample1&quot; chart-title=&quot;RAM Usage&quot; used=&quot;10&quot; total=&quot;100&quot; units=&quot;MB&quot; threshold-warning=&quot;60&quot; threshold-error=&quot;85&quot;&gt;&lt;/pf-utilization-bar-chart&gt;
+                <p>Thresholds can be set to indicate when warnings and errors have occurred.</p>
+                <div class="docs-example">
+                  <label class="example-label-title">Thresholds</label>
+                  <pf-utilization-bar-chart id="thresholdExample1" chart-title="RAM Usage" used="10" total="100" units="MB" threshold-warning="60"
+                    threshold-error="85"></pf-utilization-bar-chart>
+                  <div>Listening for Threshold Change Events: <span class="" id="thresholdChangedText"></span></div>
+                </div>
+                <pre class=" language-html"><code class=" language-html">&lt;pf-utilization-bar-chart id=&quot;thresholdExample1&quot; chart-title=&quot;RAM Usage&quot; used=&quot;10&quot; total=&quot;100&quot; units=&quot;MB&quot; threshold-warning=&quot;60&quot; threshold-error=&quot;85&quot;&gt;&lt;/pf-utilization-bar-chart&gt;
 &lt;div&gt;Listening for Threshold Change Events: &lt;span class=&quot;&quot; id=&quot;thresholdChangedText&quot;&gt;&lt;/span&gt;&lt;/div&gt;
 </code></pre>
-                                <pre class=" language-javascript"><code class=" language-javascript">const thresholdExample1 = document.querySelector('#thresholdExample1');
+                <pre class=" language-javascript"><code class=" language-javascript">const thresholdExample1 = document.querySelector('#thresholdExample1');
 const thresholdChangedText = document.querySelector('#thresholdChangedText');
 
 //increment the threshold 
@@ -181,35 +171,41 @@ thresholdExample1.addEventListener('thresholdSet', e =&gt; {
 });
 </code></pre>
 
-                                <p>The inline layout displays a chart title and utilization titles inline.</p>
-                                <div class="docs-example">
-                                    <label class="example-label-title">Inline Layout</label>
-                                    <pf-utilization-bar-chart id="thresholdExample2" chart-title="Disk I/O" layout="inline" used="450" total="500" units="I/Ops" threshold-warning="60" threshold-error="85"></pf-utilization-bar-chart>
-                                    <pf-utilization-bar-chart id="thresholdExample3" chart-title="CPU Usage" layout="inline" used="350" total="500" units="MHz" threshold-warning="60" threshold-error="85"></pf-utilization-bar-chart>
-                                    <pf-utilization-bar-chart id="thresholdExample4" chart-title="Memory" layout="inline" used="150" total="500" units="GB" threshold-warning="60" threshold-error="85"></pf-utilization-bar-chart>
-                                </div>
-                                <pre class=" language-html"><code class=" language-html">&lt;pf-utilization-bar-chart chart-title=&quot;Disk I/O&quot; layout=&quot;inline&quot; used=&quot;450&quot; total=&quot;500&quot; units=&quot;I/Ops&quot; threshold-warning=&quot;60&quot; threshold-error=&quot;85&quot;&gt;&lt;/pf-utilization-bar-chart&gt;
+                <p>The inline layout displays a chart title and utilization titles inline.</p>
+                <div class="docs-example">
+                  <label class="example-label-title">Inline Layout</label>
+                  <pf-utilization-bar-chart id="thresholdExample2" chart-title="Disk I/O" layout="inline" used="450" total="500" units="I/Ops"
+                    threshold-warning="60" threshold-error="85"></pf-utilization-bar-chart>
+                  <pf-utilization-bar-chart id="thresholdExample3" chart-title="CPU Usage" layout="inline" used="350" total="500" units="MHz"
+                    threshold-warning="60" threshold-error="85"></pf-utilization-bar-chart>
+                  <pf-utilization-bar-chart id="thresholdExample4" chart-title="Memory" layout="inline" used="150" total="500" units="GB" threshold-warning="60"
+                    threshold-error="85"></pf-utilization-bar-chart>
+                </div>
+                <pre class=" language-html"><code class=" language-html">&lt;pf-utilization-bar-chart chart-title=&quot;Disk I/O&quot; layout=&quot;inline&quot; used=&quot;450&quot; total=&quot;500&quot; units=&quot;I/Ops&quot; threshold-warning=&quot;60&quot; threshold-error=&quot;85&quot;&gt;&lt;/pf-utilization-bar-chart&gt;
 &lt;pf-utilization-bar-chart chart-title=&quot;CPU Usage&quot; layout=&quot;inline&quot; used=&quot;350&quot; total=&quot;500&quot; units=&quot;MHz&quot; threshold-warning=&quot;60&quot; threshold-error=&quot;85&quot;&gt;&lt;/pf-utilization-bar-chart&gt;
 &lt;pf-utilization-bar-chart chart-title=&quot;Memory&quot; layout=&quot;inline&quot; used=&quot;150&quot; total=&quot;500&quot; units=&quot;GB&quot; threshold-warning=&quot;60&quot; threshold-error=&quot;85&quot;&gt;&lt;/pf-utilization-bar-chart&gt;
 </code></pre>
-                            </div><!--//section-block-->
-                        </section><!--//doc-section-->
+              </div>
+              <!--//section-block-->
+            </section>
+            <!--//doc-section-->
 
-                        <!-- Tabs -->
-                        <section id="tabs" class="doc-section">
-                            <h2 class="section-title">Tabs</h2>
-                            <div class="section-block">
-                                <div class="docs-example">
-                                    <pf-tabs>
-                                        <pf-tab tabTitle="Cupcakes">
-                                            <p>Cupcake ipsum dolor. Sit amet topping. Jelly-o cake ice cream jujubes marshmallow cotton candy.</p>
-                                        </pf-tab>
-                                        <pf-tab tabTitle="Caramels">
-                                            <p>Candy caramels sweet roll macaroon pastry cupcake liquorice. Cookie I love topping I love cookie toffee chocolate bar. Jelly-o sweet roll I love dessert powder.</p>
-                                        </pf-tab>
-                                    </pf-tabs>
-                                </div>
-<pre class=" language-html"><code class=" language-html">&lt;pf-tabs&gt;
+            <!-- Tabs -->
+            <section id="tabs" class="doc-section">
+              <h2 class="section-title">Tabs</h2>
+              <div class="section-block">
+                <div class="docs-example">
+                  <pf-tabs>
+                    <pf-tab tabTitle="Cupcakes">
+                      <p>Cupcake ipsum dolor. Sit amet topping. Jelly-o cake ice cream jujubes marshmallow cotton candy.</p>
+                    </pf-tab>
+                    <pf-tab tabTitle="Caramels">
+                      <p>Candy caramels sweet roll macaroon pastry cupcake liquorice. Cookie I love topping I love cookie toffee
+                        chocolate bar. Jelly-o sweet roll I love dessert powder.</p>
+                    </pf-tab>
+                  </pf-tabs>
+                </div>
+                <pre class=" language-html"><code class=" language-html">&lt;pf-tabs&gt;
     &lt;pf-tab tabTitle=&quot;Cupcakes&quot;&gt;
         &lt;p&gt;Cupcake ipsum dolor. Sit amet topping. Jelly-o cake ice cream jujubes marshmallow cotton candy.&lt;/p&gt;
     &lt;/pf-tab&gt;
@@ -218,35 +214,37 @@ thresholdExample1.addEventListener('thresholdSet', e =&gt; {
     &lt;/pf-tab&gt;
 &lt;/pf-tabs&gt;
 </code></pre>
-                            </div><!--//section-block-->
-                        </section><!--//doc-section-->
+              </div>
+              <!--//section-block-->
+            </section>
+            <!--//doc-section-->
 
-                        <!-- Tooptils -->
-                        <section id="tooltips" class="doc-section">
-                            <h2 class="section-title">Tooltips</h2>
-                            <div class="section-block">
-                                <div class="docs-example">
-                                    <pf-tooltip id="tooltip-left" placement="left" targetSelector="#btn-left">
-                                        Tooltip text on Left
-                                    </pf-tooltip>
-                                    <button id="btn-left" type="button" class="btn btn-primary btn-lg"         aria-describedby="tooltip-left">Left</button>
+            <!-- Tooptils -->
+            <section id="tooltips" class="doc-section">
+              <h2 class="section-title">Tooltips</h2>
+              <div class="section-block">
+                <div class="docs-example">
+                  <pf-tooltip id="tooltip-left" placement="left" targetSelector="#btn-left">
+                    Tooltip text on Left
+                  </pf-tooltip>
+                  <button id="btn-left" type="button" class="btn btn-primary btn-lg" aria-describedby="tooltip-left">Left</button>
 
-                                    <pf-tooltip id="tooltip-top" placement="top" targetSelector="#btn-top">
-                                        Tooltip on top
-                                    </pf-tooltip>
-                                    <button id="btn-top" type="button" class="btn btn-default btn-lg" aria-describedby="tooltip-top">Top</button>
+                  <pf-tooltip id="tooltip-top" placement="top" targetSelector="#btn-top">
+                    Tooltip on top
+                  </pf-tooltip>
+                  <button id="btn-top" type="button" class="btn btn-default btn-lg" aria-describedby="tooltip-top">Top</button>
 
-                                    <pf-tooltip id="tooltip-bottom" placement="bottom" targetSelector="#btn-bottom">
-                                        Tooltip on bottom
-                                    </pf-tooltip>
-                                    <button id="btn-bottom" type="button" class="btn btn-warning btn-lg" aria-describedby="tooltip-bottom">Bottom</button>
+                  <pf-tooltip id="tooltip-bottom" placement="bottom" targetSelector="#btn-bottom">
+                    Tooltip on bottom
+                  </pf-tooltip>
+                  <button id="btn-bottom" type="button" class="btn btn-warning btn-lg" aria-describedby="tooltip-bottom">Bottom</button>
 
-                                    <pf-tooltip id="tooltip-right" placement="right" targetSelector="#btn-right">
-                                        Tooltip on right
-                                    </pf-tooltip>
-                                    <button id="btn-right" type="button" class="btn btn-danger btn-lg" aria-describedby="tooltip-right">Right</button>
-                                </div>
-<pre class=" language-html"><code class=" language-html">&lt;pf-tooltip id=&quot;tooltip-left&quot; placement=&quot;left&quot; targetSelector=&quot;#btn-left&quot;&gt;Tooltip text on Left&lt;/pf-tooltip&gt;
+                  <pf-tooltip id="tooltip-right" placement="right" targetSelector="#btn-right">
+                    Tooltip on right
+                  </pf-tooltip>
+                  <button id="btn-right" type="button" class="btn btn-danger btn-lg" aria-describedby="tooltip-right">Right</button>
+                </div>
+                <pre class=" language-html"><code class=" language-html">&lt;pf-tooltip id=&quot;tooltip-left&quot; placement=&quot;left&quot; targetSelector=&quot;#btn-left&quot;&gt;Tooltip text on Left&lt;/pf-tooltip&gt;
 &lt;button id=&quot;btn-left&quot; type=&quot;button&quot; class=&quot;btn btn-primary btn-lg&quot; aria-describedby=&quot;tooltip-left&quot;&gt;Left&lt;/button&gt;
 
 &lt;pf-tooltip id=&quot;tooltip-top&quot; placement=&quot;top&quot; targetSelector=&quot;#btn-top&quot;&gt;Tooltip on top&lt;/pf-tooltip&gt;
@@ -258,49 +256,67 @@ thresholdExample1.addEventListener('thresholdSet', e =&gt; {
 &lt;pf-tooltip id=&quot;tooltip-right&quot; placement=&quot;right&quot; targetSelector=&quot;#btn-right&quot;&gt;Tooltip on right&lt;/pf-tooltip&gt;
 &lt;button id=&quot;btn-right&quot; type=&quot;button&quot; class=&quot;btn btn-danger btn-lg&quot; aria-describedby=&quot;tooltip-right&quot;&gt;Right&lt;/button&gt;
 </code></pre>
-                            </div><!--//section-block-->
-                        </section><!--//doc-section-->
-                        
-                    </div><!--//content-inner-->
-                </div><!--//doc-content-->
-                <div class="doc-sidebar">
-                    <nav id="doc-nav">
-                        <ul id="doc-menu" class="nav doc-menu hidden-xs" data-spy="affix">
-                            <li><a class="scrollto" href="#overview">Overview</a></li>
-                            <li><a class="scrollto" href="#alerts">Alerts</a></li>
-                            <li>
-                                <a class="scrollto" href="#charts">Charts</a>
-                                <ul class="nav doc-sub-menu">
-                                    <li><a class="scrollto" href="#utilization-bar">Utilization Bar</a></li>
-                                </ul><!--//nav-->
-                            </li>
-                            <li><a class="scrollto" href="#tabs">Tabs</a></li>
-                            <li><a class="scrollto" href="#tooltips">Tooltips</a></li>
-                        </ul><!--//doc-menu-->
-                    </nav>
-                </div><!--//doc-sidebar-->
-            </div><!--//doc-body-->              
-        </div><!--//container-->
-    </div><!--//doc-wrapper-->
+              </div>
+              <!--//section-block-->
+            </section>
+            <!--//doc-section-->
 
-    <footer id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="text-center col">
-                    <p class="social">
-                        <iframe src="https://ghbtns.com/github-btn.html?user=patternfly-webcomponents&amp;repo=patternfly-webcomponents&amp;type=star&amp;count=true" frameborder="0" scrolling="0" width="80" height="30px"></iframe>
-                        <iframe src="https://ghbtns.com/github-btn.html?user=patternfly-webcomponents&amp;repo=patternfly-webcomponents&amp;type=fork&amp;count=true" frameborder="0" scrolling="0" width="80" height="30px"></iframe>
-                    </p>
-                </div>
-            </div>
+          </div>
+          <!--//content-inner-->
         </div>
-    </footer>
-     
-    <!-- Main Javascript -->          
-    <script src="assets/plugins/jquery-1.12.3.min.js"></script>
-    <script src="assets/js/prism.js"></script>
-    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/scripts.js"></script>
+        <!--//doc-content-->
+        <div class="doc-sidebar">
+          <nav id="doc-nav">
+            <ul id="doc-menu" class="nav doc-menu hidden-xs" data-spy="affix">
+              <li><a class="scrollto" href="#overview">Overview</a></li>
+              <li><a class="scrollto" href="#alerts">Alerts</a></li>
+              <li>
+                <a class="scrollto" href="#charts">Charts</a>
+                <ul class="nav doc-sub-menu">
+                  <li><a class="scrollto" href="#utilization-bar">Utilization Bar</a></li>
+                </ul>
+                <!--//nav-->
+              </li>
+              <li><a class="scrollto" href="#tabs">Tabs</a></li>
+              <li><a class="scrollto" href="#tooltips">Tooltips</a></li>
+            </ul>
+            <!--//doc-menu-->
+          </nav>
+        </div>
+        <!--//doc-sidebar-->
+      </div>
+      <!--//doc-body-->
+    </div>
+    <!--//container-->
+  </div>
+  <!--//doc-wrapper-->
+
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="text-center col">
+          <p class="social">
+            <iframe src="https://ghbtns.com/github-btn.html?user=patternfly-webcomponents&amp;repo=patternfly-webcomponents&amp;type=star&amp;count=true"
+              frameborder="0" scrolling="0" width="80" height="30px"></iframe>
+            <iframe src="https://ghbtns.com/github-btn.html?user=patternfly-webcomponents&amp;repo=patternfly-webcomponents&amp;type=fork&amp;count=true"
+              frameborder="0" scrolling="0" width="80" height="30px"></iframe>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main Javascript -->
+  <script src="assets/plugins/jquery-1.12.3.min.js"></script>
+  <script src="assets/js/prism.js"></script>
+  <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+  <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/scripts.js"></script>
+
+  <!-- web components -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.0.0/webcomponents-lite.js"></script>
+  <script src="//rawgit.com/webcomponents/custom-elements/master/src/native-shim.js"></script>
+  <script src="//rawgit.com/patternfly-webcomponents/patternfly-webcomponents/master-dist/dist/js/patternfly.js"></script>
 </body>
+
 </html>

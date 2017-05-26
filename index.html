@@ -1,156 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Patternfly Web Components</title>
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">    
-    <link rel="shortcut icon" href="favicon.ico">
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/patternfly/3.18.1/css/patternfly.css">   
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/patternfly/3.18.1/css/patternfly-additions.min.css"> 
-    <!-- Plugins CSS -->    
-    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
-    <link rel="stylesheet" href="assets/css/animations.css">
+  <title>Patternfly Web Components</title>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" href="favicon.ico">
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/patternfly/3.18.1/css/patternfly.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/patternfly/3.18.1/css/patternfly-additions.min.css">
+  <link rel="stylesheet" href="//rawgit.com/patternfly-webcomponents/patternfly-webcomponents/master-dist/dist/css/patternfly-webcomponents.css">
 
-    <!-- todo: remove these web component styles and shim and source from patternfly.css in patternfly-webcomponents -->
-    <script>
-        if (typeof HTMLElement !== 'function'){
-        var _HTMLElement = function(){};
-        _HTMLElement.prototype = HTMLElement.prototype;
-        HTMLElement = _HTMLElement;
-        }
-    </script>
-    <style>
-    pf-alert {
-        display: block;
-    }
-    pf-alert .hidden {
-        display: none;
-    }
-    </style>
-
-    <!-- web components -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.23/webcomponents-lite.min.js"></script>
-    <script src="//rawgit.com/patternfly-webcomponents/patternfly-webcomponents/master-dist/dist/js/pf-alert.js"></script>
-</head> 
+  <!-- Plugins CSS -->
+  <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
 
 <body>
-    <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default">
     <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="#"><img class="navbar-brand-icon" alt="brand" src="assets/images/logo-alt.svg"></a>
-        </div>
+      </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Frameworks <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="angular.html">Angular</a></li>
-                    <li><a href="angular2.html">Angular2</a></li>
-                    <li><a href="react.html">React</a></li>
-                </ul>
-            </li>
+          <li class="active"><a href="index.html">Home <span class="sr-only">(current)</span></a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Frameworks <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="angular.html">Angular</a></li>
+              <li><a href="angular2.html">Angular2</a></li>
+              <li><a href="react.html">React</a></li>
+            </ul>
+          </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="components.html">Components</a></li>
-            <li><a href="https://github.com/patternfly-webcomponents/patternfly-webcomponents">Github</a></li>
+          <li><a href="components.html">Components</a></li>
+          <li><a href="https://github.com/patternfly-webcomponents/patternfly-webcomponents">Github</a></li>
         </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-    </nav>
-    
-    <div class="jumbotron text-center">
-        <img class="animated flipInY" src="assets/images/logo-alt.svg"/>
-        <h1>patternfly-webcomponents</h1>
-        <p>Components for the web built with Patternfly 💗</p>
-        <p>
-            <a class="btn btn-default btn-lg" href="https://github.com/patternfly-webcomponents/patternfly-webcomponents" role="button">View on Github</a>
-            <a class="btn btn-primary btn-lg" href="components.html" role="button">View Components</a>
-        </p>
+      </div>
+      <!-- /.navbar-collapse -->
     </div>
+    <!-- /.container-fluid -->
+  </nav>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-8 col-sm-offset-2">
-                <h2>Installation</h2>
-                <hr/>
-                <h3>NPM</h3>
-                <p>Install patternfly-webcomponents via NPM</p>
-                <pre class="language-bash"><code class="language-bash">npm install --save patternfly-webcomponents</code></pre>
-                <p>Load the components you need alongside Patternfly CSS</p>
-                <div class="docs-example">
-                    <pf-alert type="success">Oh snap! There's something going on here. </pf-alert>
-                </div>
-<pre class=" language-html"><code class=" language-html">&lt;script src="node_modules/patternfly-webcomponents/dist/js/pf-alert.js"&gt;&lt;/script&gt;
+  <div class="jumbotron text-center">
+    <img class="animated flipInY" src="assets/images/logo-alt.svg" />
+    <h1>patternfly-webcomponents</h1>
+    <p>Components for the web built with Patternfly 💗</p>
+    <p>
+      <a class="btn btn-default btn-lg" href="https://github.com/patternfly-webcomponents/patternfly-webcomponents" role="button">View on Github</a>
+      <a class="btn btn-primary btn-lg" href="components.html" role="button">View Components</a>
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <h2>Installation</h2>
+        <hr/>
+        <h3>NPM</h3>
+        <p>Install patternfly-webcomponents via NPM</p>
+        <pre class="language-bash"><code class="language-bash">npm install --save patternfly-webcomponents</code></pre>
+        <p>Load the components you need alongside Patternfly CSS</p>
+        <div class="docs-example">
+          <pf-alert type="success">Oh snap! There's something going on here. </pf-alert>
+        </div>
+        <pre class=" language-html"><code class=" language-html">&lt;script src="node_modules/patternfly-webcomponents/dist/js/pf-alert.js"&gt;&lt;/script&gt;
 &lt;pf-alert type="success"&gt; Oh snap! There's something going on here. &lt;/pf-alert&gt;
 </code></pre>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-8 col-sm-offset-2">
-                <h2>About the Project</h2>
-                <hr/>
-                <p>Patternfly web components provides a set of core web component implementations for the <a href="https://www.patternfly.org">Patternfly</a> project.</p>
-                <h3>What is a web component?</h3>
-                <p>Web components comprise a set of new browser features added by the <a href="https://en.wikipedia.org/wiki/World_Wide_Web_Consortium">W3C</a> 
-                    to the HTML and DOM <a href="https://www.webcomponents.org/introduction#specifications">specifications</a> which allow for the creation of reusable 
-                    components in web documents and web applications. Web components will work across modern browers 
-                    and can be used with any Javascript library or framework that works with HTML.
-                </p>
-                <h3>Why should we use them?</h3>
-                <p>Web components promote base level abstractions for component presentation and 
-                    behavior based on browser standards. This allows for better encapsulation and interoperability of individual HTML elements. It also encourages more <a href="https://en.wikipedia.org/wiki/Semantic_HTML">semantic</a> HTML which expresses the true
-                    meaning of each HTML element.
-                </p>
-                <h3>How do we create them?</h3>
-                <p>Web components are an evolving feature set, and some browsers are still in the process of implementing
-                    the new web component standards. However, <a href="https://www.webcomponents.org/polyfills/">web component polyfills</a> should enable you to start using web components in modern browsers today. With 
-                    <a href="http://w3c.github.io/webcomponents/spec/custom/">Custom Elements</a> and <a href="https://www.w3.org/TR/html5/scripting-1.html#the-template-element">HTML Templates</a> 
-                    currently having the widest browser <a href="http://jonrimmer.github.io/are-we-componentized-yet/">support</a>, we have chosen to focus
-                    on these standards first in our <a href="https://github.com/patternfly-webcomponents">patternfly-webcomponent</a> implementations. We've also chosen to write our web components using <a href="http://exploringjs.com/es6/ch_modules.html">ES6 Modules</a> for current browser and framework support, but our long term plan is to adopt and support the <a href="https://w3c.github.io/webcomponents/spec/shadow/">Shadow DOM</a> and <a href="https://w3c.github.io/webcomponents/spec/imports/">HTML Import</a> specifications as well.
-                </p>
-                <h3>Where can we find other examples?</h3>
-                <p>The <a href="https://www.webcomponents.org/">WebComponents.org</a> and <a href="https://customelements.io/">CustomElements.io</a> projects provide a wide array of web component examples being used in various design and UI frameworks.</p>
-                <p>One of the core <a href="https://github.com/webcomponents/gold-standard/wiki">philosophies</a> of the web component community is to reduce dependencies (including jQuery) so that components may be 
-                more easily adopted and integrated across all frameworks and browsers. This means that projects like the ones found <a href="http://www.vanillalist.com/">here</a> and <a href="http://thednp.github.io/bootstrap.native/">here</a> which promote the use of "vanilla" javascript will naturally be applicable candidates for web components. As the DOM API in browsers has
-                evolved, we can now reliably write components without the use of legacy APIs like jQuery. You can
-                read more on this <a href="http://codeblog.cz/vanilla/overview.html#prerequisities">here</a>.
-                </p>
-            </div>
-        </div>
+      </div>
     </div>
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <h2>About the Project</h2>
+        <hr/>
+        <p>Patternfly web components provides a set of core web component implementations for the <a href="https://www.patternfly.org">Patternfly</a>          project.</p>
+        <h3>What is a web component?</h3>
+        <p>Web components comprise a set of new browser features added by the <a href="https://en.wikipedia.org/wiki/World_Wide_Web_Consortium">W3C</a>          to the HTML and DOM <a href="https://www.webcomponents.org/introduction#specifications">specifications</a> which
+          allow for the creation of reusable components in web documents and web applications. Web components will work across
+          modern browers and can be used with any Javascript library or framework that works with HTML.
+        </p>
+        <h3>Why should we use them?</h3>
+        <p>Web components promote base level abstractions for component presentation and behavior based on browser standards.
+          This allows for better encapsulation and interoperability of individual HTML elements. It also encourages more
+          <a href="https://en.wikipedia.org/wiki/Semantic_HTML">semantic</a> HTML which expresses the true meaning of each
+          HTML element.
+        </p>
+        <h3>How do we create them?</h3>
+        <p>Web components are an evolving feature set, and some browsers are still in the process of implementing the new web
+          component standards. However, <a href="https://www.webcomponents.org/polyfills/">web component polyfills</a> should
+          enable you to start using web components in modern browsers today. With
+          <a href="http://w3c.github.io/webcomponents/spec/custom/">Custom Elements</a> and <a href="https://www.w3.org/TR/html5/scripting-1.html#the-template-element">HTML Templates</a>          currently having the widest browser <a href="http://jonrimmer.github.io/are-we-componentized-yet/">support</a>,
+          we have chosen to focus on these standards first in our <a href="https://github.com/patternfly-webcomponents">patternfly-webcomponent</a>          implementations. We've also chosen to write our web components using <a href="http://exploringjs.com/es6/ch_modules.html">ES6 Modules</a>          for current browser and framework support, but our long term plan is to adopt and support the <a href="https://w3c.github.io/webcomponents/spec/shadow/">Shadow DOM</a>          and <a href="https://w3c.github.io/webcomponents/spec/imports/">HTML Import</a> specifications as well.
+        </p>
+        <h3>Where can we find other examples?</h3>
+        <p>The <a href="https://www.webcomponents.org/">WebComponents.org</a> and <a href="https://customelements.io/">CustomElements.io</a>          projects provide a wide array of web component examples being used in various design and UI frameworks.</p>
+        <p>One of the core <a href="https://github.com/webcomponents/gold-standard/wiki">philosophies</a> of the web component
+          community is to reduce dependencies (including jQuery) so that components may be more easily adopted and integrated
+          across all frameworks and browsers. This means that projects like the ones found <a href="http://www.vanillalist.com/">here</a>          and <a href="http://thednp.github.io/bootstrap.native/">here</a> which promote the use of "vanilla" javascript
+          will naturally be applicable candidates for web components. As the DOM API in browsers has evolved, we can now
+          reliably write components without the use of legacy APIs like jQuery. You can read more on this <a href="http://codeblog.cz/vanilla/overview.html#prerequisities">here</a>.
+        </p>
+      </div>
+    </div>
+  </div>
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="text-center col">
-                    <p class="social">
-                        <iframe src="https://ghbtns.com/github-btn.html?user=patternfly-webcomponents&amp;repo=patternfly-webcomponents&amp;type=star&amp;count=true" frameborder="0" scrolling="0" width="80" height="30px"></iframe>
-                        <iframe src="https://ghbtns.com/github-btn.html?user=patternfly-webcomponents&amp;repo=patternfly-webcomponents&amp;type=fork&amp;count=true" frameborder="0" scrolling="0" width="80" height="30px"></iframe>
-                    </p>
-                </div>
-            </div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="text-center col">
+          <p class="social">
+            <iframe src="https://ghbtns.com/github-btn.html?user=patternfly-webcomponents&amp;repo=patternfly-webcomponents&amp;type=star&amp;count=true"
+              frameborder="0" scrolling="0" width="80" height="30px"></iframe>
+            <iframe src="https://ghbtns.com/github-btn.html?user=patternfly-webcomponents&amp;repo=patternfly-webcomponents&amp;type=fork&amp;count=true"
+              frameborder="0" scrolling="0" width="80" height="30px"></iframe>
+          </p>
         </div>
-    </footer>
-     
-    <!-- Main Javascript -->          
-    <script src="assets/plugins/jquery-1.12.3.min.js"></script>
-    <script src="assets/js/prism.js"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main Javascript -->
+  <script src="assets/plugins/jquery-1.12.3.min.js"></script>
+  <script src="assets/js/prism.js"></script>
+  <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- web components -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.0.0/webcomponents-lite.js"></script>
+  <script src="//rawgit.com/webcomponents/custom-elements/master/src/native-shim.js"></script>
+  <script src="//rawgit.com/patternfly-webcomponents/patternfly-webcomponents/master-dist/dist/js/patternfly.js"></script>
 </body>
+
 </html>
